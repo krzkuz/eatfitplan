@@ -3,7 +3,7 @@ from users.models import Profile
 
 
 class Plan(models.Model):
-    personal_plan = models.OneToOneField(
+    personal_plan = models.ForeignKey(
         Profile, on_delete=models.SET_NULL, null=True, blank=False)
     title = models.CharField(
         max_length=200, verbose_name='Plan name', null=True, blank=False)

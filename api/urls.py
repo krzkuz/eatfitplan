@@ -1,13 +1,10 @@
 from django.urls import path
-from .views import ProfileListAPIView, PlanListAPIView, RecipeListAPIView, TagListAPIView
+from rest_framework.authtoken.views import obtain_auth_token
+
+
 
 urlpatterns = [
-    path('profiles/', ProfileListAPIView.as_view()),
-    path('profiles/<int:pk>/', ProfileListAPIView.as_view()),
-
-    path('plans/', PlanListAPIView.as_view()),
-
-    path('recipes/', RecipeListAPIView.as_view()),
-
-    path('tags/', TagListAPIView.as_view()),
+    path('auth/', obtain_auth_token),
 ]
+
+
